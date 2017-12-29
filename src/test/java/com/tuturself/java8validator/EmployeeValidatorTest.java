@@ -1,9 +1,7 @@
-/**
- * 
- */
 package com.tuturself.java8validator;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -24,7 +22,7 @@ public abstract class EmployeeValidatorTest {
 		try {
 			getInstance().validate(new Employee("ABCD", "XYZS", "jon@abc.mail", 37));
 		} catch (EmployeeException e) {
-			System.out.println(e);
+			fail("Should have been valid and therefore not thrown an exception");
 		}
 	}
 
@@ -32,6 +30,7 @@ public abstract class EmployeeValidatorTest {
 	public void employee_withoutFirstName_validationFail() {
 		try {
 			getInstance().validate(new Employee(null, "XYZS", "jon@abc.mail", 37));
+			fail("Should have had EmployeeException containing 'valid firstname'");
 		} catch (EmployeeException e) {
 			assertTrue(e.getMessage().contains("valid firstname"));
 		}
@@ -41,6 +40,7 @@ public abstract class EmployeeValidatorTest {
 	public void employee_shortFirstName_validationFail() {
 		try {
 			getInstance().validate(new Employee("A", "XYZS", "jon@abc.mail", 37));
+			fail("Should have had EmployeeException containing 'valid firstname'");
 		} catch (EmployeeException e) {
 			assertTrue(e.getMessage().contains("valid firstname"));
 		}
@@ -49,7 +49,8 @@ public abstract class EmployeeValidatorTest {
 	@Test
 	public void employee_wrongEmail_validationFail() {
 		try {
-			getInstance().validate(new Employee("ABCD", "XYZS", "jon", 37));
+			getInstance().validate(new Employee("ABCD", "XYZS", "1", 37));
+			fail("Should have had EmployeeException containing 'valid email'");
 		} catch (EmployeeException e) {
 			assertTrue(e.getMessage().contains("valid email"));
 		}
@@ -59,6 +60,7 @@ public abstract class EmployeeValidatorTest {
 	public void employee_underAge_validationFail() {
 		try {
 			getInstance().validate(new Employee("ABCD", "XYZS", "jon", 16));
+			fail("Should have had EmployeeException containing 'valid age'");
 		} catch (EmployeeException e) {
 			assertTrue(e.getMessage().contains("valid age"));
 		}
@@ -68,6 +70,7 @@ public abstract class EmployeeValidatorTest {
 	public void employee_overAge_validationFail() {
 		try {
 			getInstance().validate(new Employee("ABCD", "XYZS", "jon", 65));
+			fail("Should have had EmployeeException containing 'valid age'");
 		} catch (EmployeeException e) {
 			assertTrue(e.getMessage().contains("valid age"));
 		}
