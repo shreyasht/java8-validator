@@ -11,5 +11,5 @@ import com.tuturself.java8validator.model.Employee;
  *
  */
 public interface EmployeeValidator {
-	public void validate(Employee employee) throws EmployeeException;
+  public void validate(Employee employee) throws EmployeeException;
 }

@@ -9,12 +9,12 @@ package com.tuturself.java8validator.exception;
  */
 public class EmployeeException extends Exception {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3746951378297949885L;
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 3746951378297949885L;
 
-	public EmployeeException(String message) {
-		super(message);
-	}
+  public EmployeeException(String message) {
+    super(message);
+  }
 }

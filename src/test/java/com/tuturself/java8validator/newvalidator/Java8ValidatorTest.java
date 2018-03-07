@@ -13,10 +13,9 @@ import com.tuturself.java8validator.validators.newvalidator.Java8Validator;
  */
 public class Java8ValidatorTest extends EmployeeValidatorTest {
 
-	
-	@Override
-	public EmployeeValidator getInstance() {
-		return new Java8Validator();
-	}
+  @Override
+  public EmployeeValidator getInstance() {
+    return new Java8Validator();
+  }
 
 }

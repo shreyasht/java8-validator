@@ -13,9 +13,9 @@ import com.tuturself.java8validator.validators.oldvalidator.OldValidator;
  */
 public class OldValidatorTest extends EmployeeValidatorTest {
 
-	@Override
-	public EmployeeValidator getInstance() {
-		return new OldValidator();
-	}
+  @Override
+  public EmployeeValidator getInstance() {
+    return new OldValidator();
+  }
 
 }
