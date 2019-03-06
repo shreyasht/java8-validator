@@ -22,6 +22,8 @@ public class ValidatorUtil {
   public static final Validation<Integer> greaterThanZero = GenericValidation.from(s -> s > 0);
   
   public static final Validation<List> notEmptyList = GenericValidation.from(s -> s != null && !s.isEmpty());
+  
+  public static final Validation<Enum> notNullEnum = GenericValidation.from(s -> s != null);
 
   public static final Validation<String> stringMoreThan(int size) {
     return GenericValidation.from(s -> ((String) s).length() > size);
