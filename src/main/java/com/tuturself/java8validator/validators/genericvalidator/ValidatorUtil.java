@@ -3,6 +3,8 @@
  */
 package com.tuturself.java8validator.validators.genericvalidator;
 
+import java.util.List;
+
 /**
  * @author Dragon Warrior
  *
@@ -18,6 +20,8 @@ public class ValidatorUtil {
   public static final Validation<Integer> notNullInteger = GenericValidation.from(s -> s != null);
 
   public static final Validation<Integer> greaterThanZero = GenericValidation.from(s -> s > 0);
+  
+  public static final Validation<List> notEmptyList = GenericValidation.from(s -> s != null && !s.isEmpty());
 
   public static final Validation<String> stringMoreThan(int size) {
     return GenericValidation.from(s -> ((String) s).length() > size);
