@@ -10,6 +10,8 @@ package com.tuturself.java8validator.validators.genericvalidator;
 public class ValidatorUtil {
 
   public static final Validation<String> notNullString = GenericValidation.from(s -> s != null);
+  
+  public static final Validation<Object> notNullObject = GenericValidation.from(s -> s != null);
 
   public static final Validation<String> notEmptyString = GenericValidation.from(s -> !s.isEmpty());
 
