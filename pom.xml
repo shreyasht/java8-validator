@@ -6,6 +6,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java8Validator</name>
 	<description>Java8Validator</description>
+	
+	<repositories>
+      <repository>
+          <id>java-net-repo</id>
+          <url>https://maven.java.net/content/repositories/public/</url>
+      </repository>
+</repositories>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
